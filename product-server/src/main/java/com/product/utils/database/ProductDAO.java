@@ -44,15 +44,22 @@ public class ProductDAO extends SQLDatabase {
         return res;
     }
 
-    public void add(String name, double sales) {
+    public void add(Product item) {
         executePreparedStatement("INSERT INTO " + table
-                + "(name, sales) VALUES (?, ?)", name, (int) (sales * 100));
+                + "(name, quantity, price) VALUES (?, ?, ?)", item.getProductName(), item.getQuantity(), item.getPrice());
     }
 
     public void delete(int id) {
         System.out.println(id);
         executePreparedStatement("DELETE FROM " + table + " WHERE id=?", id);
     }
+
+    public int update(Product p){
+        return executeUpdatePreparedStatement("UPDATE " + table + " SET" + "name = COALESCE(?, name), " +
+                "quantity = COALESCE(?, quantity), " + "price = COALESCE(?, price)"
+        + " WHERE id = ?", p.getProductName(), p.getQuantity(), p.getPrice(), p.getId());
+    }
+
 }
 
     

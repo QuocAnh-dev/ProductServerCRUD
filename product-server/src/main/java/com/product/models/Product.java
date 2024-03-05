@@ -17,6 +17,19 @@ public class Product {
         this.image = image;
     }
 
+    public Product(String productName, int quantity, int price) {
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
+    public Product(int id, String productName, int quantity, int price) {
+        this.id = id;
+        this.productName = productName;
+        this.quantity = quantity;
+        this.price = price;
+    }
+
     public int getId() {
         return id;
     }
@@ -60,4 +73,5 @@ public class Product {
     public String toString() {
         return Configuration.gson.toJson(this);
     }
+
 }
