@@ -55,7 +55,7 @@ public class ProductDAO extends SQLDatabase {
     }
 
     public int update(Product p){
-        return executeUpdatePreparedStatement("UPDATE " + table + " SET" + "name = COALESCE(?, name), " +
+        return executeUpdatePreparedStatement("UPDATE " + table + " SET" + " name = COALESCE(?, name), " +
                 "quantity = COALESCE(?, quantity), " + "price = COALESCE(?, price)"
         + " WHERE id = ?", p.getProductName(), p.getQuantity(), p.getPrice(), p.getId());
     }

@@ -1,0 +1,29 @@
+.App {
+  text-align: center;
+}
+
+.product-list{
+  display: flex;
+  flex-wrap: wrap;
+}
+.product-infor{
+  border: 1px solid #333;
+  border-radius: 5px;
+  width: 200px;
+  margin: 10px;
+}
+
+.product-list img{
+  width: 150px;
+}
+
+/* .product-details{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+} */
+
+.product-details button{
+  margin: 15px;
+}
